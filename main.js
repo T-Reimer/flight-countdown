@@ -33,7 +33,7 @@ function preload() {
 
 function setup() {
 
-    createCanvas(windowHeight, windowWidth);
+    createCanvas(windowWidth, windowHeight);
     background(150);
 
     let x = 0;

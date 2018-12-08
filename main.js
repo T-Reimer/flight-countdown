@@ -78,8 +78,6 @@ function draw() {
     string += minutes < 10 ? `0${minutes}m ` : `${minutes}m `;
     string += seconds < 10 ? `0${seconds}s ` : `${seconds}s `;
 
-    console.log(string);
-
     string = string.split("");
 
     background(150);

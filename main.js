@@ -18,6 +18,7 @@ const randomColours = [
 ];
 
 let font;
+let bg;
 
 let characters = {};
 let maxPoints = 0;
@@ -29,15 +30,16 @@ const arrivalTime = new Date("Dec 20, 2018 3:18 pm");
 
 function preload() {
     font = loadFont("./Roboto-Bold.ttf");
+    bg = loadImage("./IMG_20180513_133059.jpg");
 }
 
 function setup() {
 
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(1024, 768);
     background(150);
 
     let x = 0;
-    let y = 200;
+    let y = 100;
 
     setTimeout(function() {
         text = tmpText.map(function(char) {
@@ -80,7 +82,10 @@ function draw() {
 
     string = string.split("");
 
-    background(150);
+    background(bg);
+
+    fill([38, 198, 218, 150]);
+    rect(0, 0, 1024, 120);
 
     for (let i = 0; i < text.length; i++) {
         let letter = text[i];

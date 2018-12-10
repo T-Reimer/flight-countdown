@@ -76,6 +76,7 @@ function draw() {
 
     let string = `${days}d `;
 
+    days += days < 10 ? `0${days}d ` : `${days}d `;
     string += hours < 10 ? `0${hours}h ` : `${hours}h `;
     string += minutes < 10 ? `0${minutes}m ` : `${minutes}m `;
     string += seconds < 10 ? `0${seconds}s ` : `${seconds}s `;

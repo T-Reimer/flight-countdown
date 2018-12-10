@@ -26,7 +26,7 @@ let maxPoints = 0;
 let tmpText = "12d 04h 06m 02s".split("");
 let text = [];
 
-const arrivalTime = new Date("Dec 20, 2018 3:18 pm UTC");
+const arrivalTime = new Date("Dec 20, 2018 3:18 pm");
 
 function preload() {
     font = loadFont("./Roboto-Bold.ttf");

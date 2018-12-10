@@ -3,8 +3,8 @@ const randomColours = [
     [233, 30, 99],
     [156, 39, 176],
     [103, 58, 183],
-    [63, 81, 181],
-    [33, 150, 243],
+    // [63, 81, 181],
+    // [33, 150, 243],
     [3, 169, 244],
     [0, 188, 212],
     [0, 150, 136],
@@ -74,7 +74,7 @@ function draw() {
 
     let seconds = Math.floor(time);
 
-    let string = `${days}d `;
+    let string = ``;
 
     string += days < 10 ? `0${days}d ` : `${days}d `;
     string += hours < 10 ? `0${hours}h ` : `${hours}h `;
@@ -85,7 +85,7 @@ function draw() {
 
     background(bg);
 
-    fill([38, 198, 218, 150]);
+    fill([38, 198, 218, 200]);
     rect(0, 0, 1024, 120);
 
     for (let i = 0; i < text.length; i++) {

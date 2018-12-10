@@ -7,7 +7,7 @@ class Particle {
         this.x = random(width);
         this.y = random(height);
 
-        this.r = 2;
+        this.r = 3;
         this.colour = random(randomColours);
 
 

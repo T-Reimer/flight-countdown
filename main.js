@@ -92,10 +92,12 @@ function draw() {
         let letter = text[i];
 
         letter.setText(string[i]);
+        letter.spawnPoint(true);
 
         letter.draw();
     }
 
+    drawWords();
 }
 
 
@@ -120,6 +122,8 @@ class Letter {
 
         this.particles = [];
         this.path = [];
+
+        this.drawing = [];
     }
 
     setText(val) {
@@ -142,10 +146,39 @@ class Letter {
         push();
         translate(this.x, this.y);
 
-        this.particles.forEach(function(particle) {
+        this.drawing.forEach(function(particle) {
             particle.update();
             particle.draw();
         });
         pop();
+    }
+
+    spawnPoint(all) {
+        if (all) {
+            this.drawing = this.particles;
+            return;
+        }
+
+        if (this.drawing.length === this.particles.length) {
+            return;
+        }
+        let tries = 5;
+        let count = 0;
+        let added = false;
+
+        while (count < tries && !added) {
+            count++;
+
+            let index = Math.round(random(0, this.particles.length));
+
+            if (this.particles[index]) {
+                let particle = this.particles[index];
+
+                if (!this.drawing.includes(particle)) {
+                    this.drawing.push(particle);
+                    added = true;
+                }
+            }
+        }
     }
 }
